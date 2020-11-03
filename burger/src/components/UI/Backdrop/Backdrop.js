@@ -1,7 +1,10 @@
 import React from 'react'
 
-const modal = (props) => {
-  return <>{props.childen}</>
-}
+import classes from './Backdrop.css'
 
-export default modal
+const backdrop = (props) =>
+  props.show ? (
+    <div className={classes.Backdrop} onClick={props.clicked}></div>
+  ) : null
+
+export default backdrop
