@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 import "./NewPost.css";
 
 class NewPost extends Component {
@@ -10,17 +11,14 @@ class NewPost extends Component {
   };
 
   postDataHandler = () => {
-    const post = {
+    const data = {
       title: this.state.title,
       body: this.state.content,
       author: this.state.author,
     };
-    // this route takes GET/POST request
-    axios
-      .post("https://jsonplaceholder.typicode.com/posts", post)
-      .then((repsonse) => {
-        console.log(repsonse);
-      });
+    axios.post("/posts", data).then((response) => {
+      console.log(response);
+    });
   };
 
   render() {
