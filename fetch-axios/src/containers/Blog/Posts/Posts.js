@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "../../../axios";
 
 import Post from "../../../components/Post/Post";
+import { withRouter } from "react-router-dom";
 import "./Posts.css";
 
 class Posts extends Component {
@@ -43,6 +44,7 @@ class Posts extends Component {
             key={post.id}
             title={post.title}
             author={post.author}
+            match={this.props.match}
             clicked={() => this.postSelectedHandler(post.id)}
           />
         );
